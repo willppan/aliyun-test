@@ -56,7 +56,7 @@ img{ border:none; -ms-interpolation-mode:bicubic;}
 .nav .nLi#n3 .sub{ background:url(../images/bg2.png) center top no-repeat; height:125px;}
 
 .titc{ height:107px;/* border-bottom:1px solid #cbe8f6; */}
-.titc em{ float: right;display:inline-block;margin-top:90px; background:url(../images/tbg.png) top right no-repeat; padding:50px 65px 0 0;}
+.titc em{display:inline-block;margin-top:90px;margin-left: 120px; background:url(../images/tbg.png) top right no-repeat; padding:50px 65px 0 0;}
 .main{ width:1240px; margin:0 auto; /* background:url(../images/mbg.png) 300px 0 repeat-y; */ min-height:500px; padding:170px 0;}
 .sider{ width:268px; padding:0 0 0 32px;}
 .sider h3{ height:43px; cursor:pointer; margin-bottom:28px; position:relative;}
@@ -145,4 +145,4 @@ img{ border:none; -ms-interpolation-mode:bicubic;}
 .footer{ background:#166ab0; text-align:center; padding:15px 0; color:#fff; font-size:15px; line-height:22px;}
 /*首页适配*/
 .i-c{position:fixed;width:100%;height:100%;left:0;top:0;text-align: center;background-image: linear-gradient(45deg,#003992 0%,#003992 50%);}
-.i-c img{width:100%;}
+.i-c img{width:1240px;}
