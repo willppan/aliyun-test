@@ -1,5 +1,8 @@
 <?php
 
+
+use Illuminate\Session\Middleware\StartSession;
+
 require_once __DIR__.'/../vendor/autoload.php';
 
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
@@ -46,6 +49,11 @@ $app->singleton(
     App\Console\Kernel::class
 );
 
+// 注册 Excel
+$app->register(Maatwebsite\Excel\ExcelServiceProvider::class);
+
+// 设置session别名
+$app->alias('session', 'Illuminate\Session\SessionManager');
 /*
 |--------------------------------------------------------------------------
 | Register Middleware
@@ -57,13 +65,21 @@ $app->singleton(
 |
 */
 
-// $app->middleware([
-//     App\Http\Middleware\ExampleMiddleware::class
-// ]);
+// 载入所有config配置
+foreach (scandir(__DIR__ . '/../config') as $configItem) {
+    if (!in_array($configItem, ['.', '..'])) {
+        $app->configure(str_replace('.php', '', $configItem));
+    }
+}
 
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+
+ $app->middleware([
+     Illuminate\Session\Middleware\StartSession::class,
+ ]);
+
+ $app->routeMiddleware([
+     'auth'           => App\Http\Middleware\Authorization::class,
+ ]);
 
 /*
 |--------------------------------------------------------------------------
@@ -77,8 +93,11 @@ $app->singleton(
 */
 
 // $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
+ $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+$app->register(Illuminate\Session\SessionServiceProvider::class);
+$app->register(Illuminate\Redis\RedisServiceProvider::class);
+$app->register(Illuminate\Cookie\CookieServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -94,7 +113,13 @@ $app->singleton(
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {
-    require __DIR__.'/../routes/web.php';
+    require __DIR__.'/../routes/api.php';
 });
+
+//$app->router->group([
+//    'namespace' => 'App\Http\Controllers',
+//], function ($router) {
+//    require __DIR__.'/../routes/web.php';
+//});
 
 return $app;

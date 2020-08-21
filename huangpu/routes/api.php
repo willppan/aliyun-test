@@ -14,3 +14,19 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->post('login', 'LoginController@index');
+
+$router->post('register', 'RegisterController@index');
+
+$router->post('visit', 'VisitController@index');
+
+$router->group([
+    'middleware' => 'auth',
+], function () use ($router) {
+    $router->get('count', 'VisitController@count');
+
+    $router->get('list', 'ListController@index');
+    $router->get('export', 'ListController@export');
+});
+
