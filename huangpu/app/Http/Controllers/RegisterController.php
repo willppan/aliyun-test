@@ -18,7 +18,7 @@ class RegisterController
 {
     public function index(Request $request)
     {
-        $params = $request->only(['id_card','phone','name','company','date']);
+        $params = $request->only(['id_card','phone','name','company','date','term']);
         // 参数验证规则
         $rules = [
             'id_card' => ['required','regex:
@@ -27,6 +27,7 @@ class RegisterController
             'name'    => 'required',
             'company' => 'required',
             'date'    => 'required',
+            'term'    => 'required',
         ];
         $message = [
             'id_card.*' => '身份证号格式错误',
@@ -34,6 +35,7 @@ class RegisterController
             'name.required'    => '姓名不能为空',
             'company.required' => '所选单位不能为空',
             'date.required'    => '预约日期不能为空',
+            'term.required'    => '预约场次不能为空',
         ];
         Validator::make($params, $rules, $message)->validate();
 

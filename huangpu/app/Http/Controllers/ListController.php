@@ -57,6 +57,7 @@ class ListController
                 $item['id_card']."\t",
                 $item['company'],
                 $item['date'],
+                $item['term'],
             ];
         }
         return (new ExcelExport([
@@ -68,14 +69,17 @@ class ListController
                 '手机号',
                 '身份证号',
                 '报考单位',
+                '预约日期',
                 '预约场次'
             ],
             'width' => [
-                'A' => 40,
-                'B' => 40,
-                'C' => 80,
-                'D' => 80,
+                'A' => 10,
+                'B' => 10,
+                'C' => 20,
+                'D' => 30,
                 'E' => 40,
+                'F' => 10,
+                'G' => 10,
             ]
         ]))->export();
     }

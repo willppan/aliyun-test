@@ -21,7 +21,7 @@
 			padding: 0;
 		}
 		.mid{
-			padding: 20px 25%;
+			padding: 20px 20%;
 			min-height: 500px
 		}
 		tr{
@@ -35,6 +35,7 @@
 			text-align: center;
 		}
 		th{
+			min-width: 80px;
 			font-size: 12px;
 			padding: 2px 15px;
 			background-color: #578ae3;
@@ -106,18 +107,25 @@
 				</div>
 
 				<div style="width: 100%;text-align: left;margin-top: 30px;position: relative;">
-					<div style="float: left;position: relative;">
-						<p style="color: #b5b5b5;font-size: 14px;padding-left: 5px;position: absolute;left: 0px;top: -23px">预约场次</p>
+					<div style="float: left;position: relative;margin-right: 25px">
+						<p style="color: #b5b5b5;font-size: 14px;padding-left: 5px;position: absolute;left: 0px;top: -23px">预约日期</p>
 						<select id="date">
-							<option value="">--请选择预约场次--</option>
-							<option>9月2日上午9:00-11:30</option>
-							<option>9月2日下午14:00-17:00</option>
-							<option>9月3日上午9:00-11:30</option>
-							<option>9月3日下午14:00-17:00</option>
-							<option>9月4日上午9:00-11:30</option>
-							<option>9月4日下午14:00-17:00</option>
+							<option value="">--请选择预约日期--</option>
+							<option>9月2日</option>
+							<option>9月3日</option>
+							<option>9月4日</option>
 						</select>
 					</div>
+
+					<div style="float: left;position: relative;">
+						<p style="color: #b5b5b5;font-size: 14px;padding-left: 5px;position: absolute;left: 0px;top: -23px">预约场次</p>
+						<select id="term">
+							<option value="">--请选择预约场次--</option>
+							<option>上午9:00-11:30</option>
+							<option>下午14:00-17:00</option>
+						</select>
+					</div>
+
 
 					<div style="text-align: center;margin-top:40px;">
 						<span id="btn" style="padding: 6px 20px;background-color: #3c76e1;color:white;border-radius: 5px;">搜索</span>
@@ -179,9 +187,9 @@
 			dataType:'json',
 			success: function(res){
 				if(res.code == 0){
-					var table_data = '<tr><th>姓名</th><th>手机号</th><th>身份证</th><th>单位名称</th><th>预约时间</th></tr>';
+					var table_data = '<tr><th>姓名</th><th>手机号</th><th>身份证</th><th>单位名称</th><th>预约日期</th><th>预约场次</th></tr>';
 					$.each(res.data,function(k,v){
-						table_data += '<tr><td>'+v.name+'</td><td>'+v.phone+'</td><td>'+v.id_card+'</td><td>'+v.company+'</td><td>'+v.date+'</td></tr>';
+						table_data += '<tr><td>'+v.name+'</td><td>'+v.phone+'</td><td>'+v.id_card+'</td><td>'+v.company+'</td><td>'+v.date+'</td><td>'+v.term+'</td></tr>';
 					});
 					$('#data').html(table_data);
 				}else{
@@ -195,6 +203,7 @@
 		var data = {
 			'company':$('#company').val(),
 			'date':$('#date').val(),
+			'term':$('#term').val(),
 		};
 		$.ajax({
 			type: 'get',
@@ -207,9 +216,9 @@
 			dataType:'json',
 			success: function(res){
 				if(res.code == 0){
-					var table_data = '<tr><th>姓名</th><th>手机号</th><th>身份证</th><th>单位名称</th><th>预约时间</th></tr>';
+					var table_data = '<tr><th>姓名</th><th>手机号</th><th>身份证</th><th>单位名称</th><th>预约日期</th><th>预约场次</th></tr>';
 					$.each(res.data,function(k,v){
-						table_data += '<tr><td>'+v.name+'</td><td>'+v.phone+'</td><td>'+v.id_card+'</td><td>'+v.company+'</td><td>'+v.date+'</td></tr>';
+						table_data += '<tr><td>'+v.name+'</td><td>'+v.phone+'</td><td>'+v.id_card+'</td><td>'+v.company+'</td><td>'+v.date+'</td><td>'+v.term+'</td></tr>';
 					});
 					$('#data').html(table_data);
 				}else{

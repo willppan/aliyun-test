@@ -23,5 +23,6 @@ class Register extends BaseModel
         'name',
         'company',
         'date',
+        'term',
     ];
 }
