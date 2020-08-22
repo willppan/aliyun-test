@@ -28,15 +28,15 @@
 			border:1px solid #578ae3;
 		}
 		td{
-			font-size: 12px;
+			font-size: 13px;
 			padding: 2px 15px;
 			/*font-weight: bold;*/
 			border: 1px solid #578ae3;
 			text-align: center;
 		}
 		th{
-			min-width: 80px;
-			font-size: 12px;
+			min-width: 100px;
+			font-size: 14px;
 			padding: 2px 15px;
 			background-color: #578ae3;
 			border: 1px solid #578ae3;
