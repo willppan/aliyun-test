@@ -16,7 +16,7 @@ class ListController
 {
     public function index(Request $request)
     {
-        $params = $request->only(['company','date']);
+        $params = $request->only(['company','date','term']);
 
         $data = Register::query()
             ->when(!empty($params['date']),function ($query) use($params){
