@@ -232,7 +232,8 @@
 	$('#exbtn').on('click', function() {
 		company = $('#company').val();
 		date = $('#date').val();
-		window.location.href=export_url+'?company='+company+'&date='+date;
+		term = $('#term').val();
+		window.location.href=export_url+'?company='+company+'&date='+date+'&term='+term;
 	});
 
 
