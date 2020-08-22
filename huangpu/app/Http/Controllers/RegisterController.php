@@ -38,6 +38,40 @@ class RegisterController
             'term.required'    => '预约场次不能为空',
         ];
         Validator::make($params, $rules, $message)->validate();
+        if(time() >= 1599235200){
+            return response()->json([
+                'code'    => 10000,
+                'message' => '预约已结束！',
+            ]);
+        }
+
+        if ($params['date'] == '9月2日') {
+            if(time() >= 1599062400){
+                return response()->json([
+                    'code'    => 10000,
+                    'message' => '预约时间已过，请重新选择！',
+                ]);
+            }
+        } else if ($params['date'] == '9月3日') {
+            if(time() >= 1599148800){
+                return response()->json([
+                    'code'    => 10000,
+                    'message' => '预约时间已过，请重新选择！',
+                ]);
+            }
+        } else if ($params['date'] == '9月4日') {
+            if(time() >= 1599235200){
+                return response()->json([
+                    'code'    => 10000,
+                    'message' => '预约时间已过，请重新选2择！',
+                ]);
+            }
+        } else {
+            return response()->json([
+                'code'    => 10000,
+                'message' => '预约时间已过，请重新选择！',
+            ]);
+        }
 
         $has = Register::query()
             ->where('id_card',$params['id_card'])

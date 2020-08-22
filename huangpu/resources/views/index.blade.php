@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>黄埔管理后台</title>
+	<title>广州市黄埔区 广州开发区2020年公开招聘政府雇员 管理后台</title>
 	<style>
 		html{
 			background-color: white;
@@ -68,7 +68,8 @@
 <body>
 		<div class="top">
 			<div class="banner">
-					<p style="width: 100%;text-align: center;color: white;font-size: 24px">黄埔管理后台</p>
+				<p style="width: 100%;text-align: center;color: white;font-size: 24px">广州市黄埔区 广州开发区2020年公开招聘政府雇员 </p>
+				<p style="width: 100%;text-align: center;color: white;font-size: 24px">管理后台</p>
 			</div>
 		</div>
 
