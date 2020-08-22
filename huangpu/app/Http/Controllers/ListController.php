@@ -22,6 +22,9 @@ class ListController
             ->when(!empty($params['date']),function ($query) use($params){
                 $query->where('date',$params['date']);
             })
+            ->when(!empty($params['term']),function ($query) use($params){
+                $query->where('term',$params['term']);
+            })
             ->when(!empty($params['company']),function ($query) use($params){
                 $query->where('company',$params['company']);
             })
