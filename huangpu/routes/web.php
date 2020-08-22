@@ -14,3 +14,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+
+
+$router->addRoute(['GET','POST'],'/login', 'WebController@login'); // 登录
+$router->addRoute(['GET','POST'],'/index', 'WebController@index'); // 首页
+

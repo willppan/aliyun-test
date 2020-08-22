@@ -37,7 +37,18 @@ class RegisterController
         ];
         Validator::make($params, $rules, $message)->validate();
 
-        Register::query()->insert($params);
+        $has = Register::query()
+            ->where('id_card',$params['id_card'])
+            ->orWhere('phone',$params['phone'])
+            ->first();
+        if(!empty($has)){
+            return response()->json([
+                'code'    => 10000,
+                'message' => '请勿重复提交！',
+            ]);
+        }
+
+        Register::query()->create($params);
 
         return [
             'data'    => [],

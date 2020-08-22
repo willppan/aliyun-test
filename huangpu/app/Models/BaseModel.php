@@ -25,6 +25,7 @@ abstract class BaseModel extends Model
      * @var array
      */
     protected $dates = [
+        'created_at',
         'updated_at',
     ];
 

@@ -48,6 +48,7 @@ class ListController
             })
             ->get()
             ->toArray();
+        $export = [];
         foreach($data as $key=> $item){
             $export[] = [
                 $key+1,

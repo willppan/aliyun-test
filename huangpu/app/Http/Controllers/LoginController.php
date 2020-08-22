@@ -53,9 +53,20 @@ class LoginController
         // 认证信息保存
         Auth::guard('admin')->login($admin);
 
-        return [
-            'id'              => $admin->id,
-            'username'        => $admin->username,
-        ];
+        return response()->json([
+            'code'    => 0,
+            'message' => 'success',
+            'data'    => [
+                'id'       => $admin->id,
+                'username' => $admin->username,
+            ],
+        ]);
+    }
+
+
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+        return [];
     }
 }
