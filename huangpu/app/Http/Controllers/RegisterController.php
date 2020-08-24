@@ -38,6 +38,14 @@ class RegisterController
             'term.required'    => '预约场次不能为空',
         ];
         Validator::make($params, $rules, $message)->validate();
+        // 8月28日上午9点
+        if(time() < 1598576400){
+            return response()->json([
+                'code'    => 10000,
+                'message' => '预约未开始！',
+            ]);
+        }
+        
         if(time() >= 1599235200){
             return response()->json([
                 'code'    => 10000,
@@ -63,7 +71,7 @@ class RegisterController
             if(time() >= 1599235200){
                 return response()->json([
                     'code'    => 10000,
-                    'message' => '预约时间已过，请重新选2择！',
+                    'message' => '预约时间已过，请重新选择！',
                 ]);
             }
         } else {
