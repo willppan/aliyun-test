@@ -45,7 +45,7 @@ class RegisterController
                 'message' => '预约未开始！',
             ]);
         }
-        
+
         if(time() >= 1599235200){
             return response()->json([
                 'code'    => 10000,
@@ -77,7 +77,25 @@ class RegisterController
         } else {
             return response()->json([
                 'code'    => 10000,
-                'message' => '预约时间已过，请重新选择！',
+                'message' => '预约时间有误，请重新选择！',
+            ]);
+        }
+        if(!in_array($params['term'],['上午9:00-11:30','下午14:00-17:00'])){
+            return response()->json([
+                'code'    => 10000,
+                'message' => '预约时间有误，请重新选择！',
+            ]);
+        }
+
+        $count = Register::query()
+            ->where('date',$params['date'])
+            ->where('term',$params['term'])
+            ->count();
+
+        if($count >= 300){
+            return response()->json([
+                'code'    => 10000,
+                'message' => '该时间段已约满，请选择其他时间预约！',
             ]);
         }
 

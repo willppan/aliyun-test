@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 	<title>广州市黄埔区2020年公开招聘政府雇员</title>
 	<style>
 		html{
@@ -242,7 +242,7 @@
 	$(function(){
 		$.ajax({
             type: 'post',
-            url: 'http://106.14.20.148/visit',
+            url: 'https://south.liepincc.com/visit',
             data: JSON.stringify([]),
             xhrFields: {
        			withCredentials: false    // 前端设置是否带cookie
