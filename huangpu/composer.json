@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=7.1.3",
+        "barryvdh/laravel-snappy": "^0.4.7",
         "illuminate/cookie": "^5.8",
         "illuminate/redis": "^5.8",
         "illuminate/session": "^5.8",

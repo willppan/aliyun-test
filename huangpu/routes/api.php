@@ -19,6 +19,7 @@ $router->post('do_login', 'LoginController@index');
 $router->get('logout', 'LoginController@logout');
 
 $router->post('register', 'RegisterController@index');
+$router->post('search', 'RegisterController@search');
 
 $router->post('visit', 'VisitController@index');
 

@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 
 
+use App\Models\Inquiry;
 use App\Models\Register;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -119,5 +120,40 @@ class RegisterController
         ];
     }
 
+    public function search(Request $request)
+    {
+        $params = $request->only(['id_card','phone','name']);
+        // 参数验证规则
+        $rules = [
+            'id_card' => ['required','regex:
+/^[1-9]\d{5}(18|19|20|(3\d))\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/'],
+            'phone'   => 'required|regex:/^1[345789][0-9]{9}$/',
+            'name'    => 'required',
+        ];
+        $message = [
+            'id_card.*' => '身份证号格式错误',
+            'phone.*'   => '手机号格式错误',
+            'name.required'    => '姓名不能为空',
+        ];
+        Validator::make($params, $rules, $message)->validate();
 
+
+        $data = Inquiry::query()
+            ->where('name',$params['name'])
+            ->where('phone',$params['phone'])
+            ->where('id_card',$params['id_card'])
+            ->first();
+        if(empty($data)){
+            return response()->json([
+                'code'    => 10000,
+                'message' => '未查到此人信息！',
+            ]);
+        }
+
+        return [
+            'data'    => $data,
+            'code'    => 0,
+            'message' => 'success',
+        ];
+    }
 }

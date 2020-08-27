@@ -92,9 +92,12 @@ foreach (scandir(__DIR__ . '/../config') as $configItem) {
 |
 */
 
+class_alias('Barryvdh\Snappy\Facades\SnappyPdf', 'PDF');
+
 // $app->register(App\Providers\AppServiceProvider::class);
  $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+$app->register(Barryvdh\Snappy\ServiceProvider::class);
 $app->register(Illuminate\Session\SessionServiceProvider::class);
 $app->register(Illuminate\Redis\RedisServiceProvider::class);
 $app->register(Illuminate\Cookie\CookieServiceProvider::class);
