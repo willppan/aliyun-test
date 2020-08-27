@@ -35,7 +35,21 @@
 			margin: 0 auto;
 		}
 		.t1{
-			font-size: 15px;
+			font-size: 18px;
+			display: block;
+			height: 20px;
+			line-height: 20px;
+			margin: 0 auto;
+			cursor: pointer;
+			text-align: center;
+			padding: 5px 3px;
+			margin: 20px 5px 22px 5px;
+			float: left;
+			color: white;
+			text-decoration: none;
+		}
+		.t2{
+			font-size: 18px;
 			display: block;
 			height: 20px;
 			line-height: 20px;
@@ -43,9 +57,9 @@
 			cursor: pointer;
 			text-align: center;
 			padding: 5px 5px;
-			margin: 20px 0px 22px 0px;
-			float: left;
-			color: white;
+			width: 110px;
+			/*margin: 20px 5px 22px 5px;*/
+			color: black;
 			text-decoration: none;
 		}
 		*{
@@ -74,10 +88,10 @@
 				font-size:12px!important;
 			}
 			.t1{
-				padding: 0px 2px;
+				padding: 0px;
 			}
 			.logo{
-				width: 20px!important;
+				width: 50px!important;
 				margin-top: 20px!important;
 			}
 		}
@@ -96,14 +110,19 @@
 <body>
 		<div class="top">
 			<div class="banner">
-				<img src="1/logo.png" width="40px" style="margin: 15px 5px 0 10px ;float: left;" class="logo">
-				<div style="float: left;font-weight: bold;">
+				<img src="1/logo.png" width="100px" style="margin: 15px 0 0 10px ;" class="logo">
+				<div style="float: right;font-weight: bold;">
 					
 					<a href="index.html" class="t1">首页</a>
 
-					<a href="gangwei.html" class="t1">报名入口</a>	
-
-					<a href="yushen.html" class="t1">报名预审查询</a>
+					<span class="xiala t1" style="position: relative;">
+						<span >报名入口</span>
+						<div class="lie" style="position: absolute;left: -20px;top: 30px;background-color: white;border-radius: 5px;display: none;">
+							<a href="gangwei.html" class="t2">岗位报名</a>
+							<a href="yushen.html" class="t2">报名预审查询</a>
+							<a href="xiazai.html" class="t2">报名表格下载</a>
+						</div>
+					</span>	
 
 					<a href="yuyue.html" class="t1">资格审查预约</a>
 
@@ -153,6 +172,19 @@
 
 	</div>
 </body>
+
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+
+	$('.xiala').hover(function(){
+		$('.lie').show();
+	},function(){
+		$('.lie').hide();
+	})
+
+
+
+</script>
 </html>
 
 
