@@ -285,27 +285,6 @@
 			alert('身份证号不能为空！');
 			return;
 		}
-		//  name = $('#name').val();
-  //       phone = $('#phone').val();
-  //       id_card = $('#id_card').val();
-
-		// var phone_pattern = /^1[34578]\d{9}$/;
-		// if(!phone_pattern.test(phone)){
-		// 	alert('手机号格式错误！');
-		// 	return;
-		// }
-		// var id_card_pattern = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
-		// if(!id_card_pattern.test(id_card)){
-		// 	alert('身份证号格式错误！');
-		// 	return;
-		// }
-
-		// name = $('#name').val();
-  //       phone = $('#phone').val();
-  //       id_card = $('#id_card').val();
-  //      	download_url = 'http://www.huangpu.com/download',
-  
-		// window.location.href=download_url+'?name='+name+'&phone='+phone+'&id_card='+id_card;
 		
 
 		var data = {};
@@ -328,7 +307,7 @@
         
         $.ajax({
             type: 'get',
-            url: 'https://south.liepincc.com/download',
+            url: 'https://south.liepincc.com/search_download',
             data: data,
             xhrFields: {
        			withCredentials: false    // 前端设置是否带cookie
@@ -336,26 +315,18 @@
             contentType: "application/json;charset=utf-8",
             dataType:'json',
             success: function(res){
-            	// console.log(123);
-            	 name = $('#name').val();
-			        phone = $('#phone').val();
-			        id_card = $('#id_card').val();
-			       	download_url = 'http://south.liepincc.com/download',
+            	if(res.code == 0){
+			        key = res.data.key;
+			       	download_url = 'https://south.liepincc.com/download';
+			       	window.location.href=download_url+'?key='+key;
+                }else{
+                	
+			       	$('.text').html('暂未查找到数据，请于次日12:00之后进行查询')
+                	$('.hide').show();
 			  
-					window.location.href=download_url+'?name='+name+'&phone='+phone+'&id_card='+id_card;
-				return 0;
-    //         	console.log(1);
-    //             if(res.code == 10000){
-    //             	$('.text').html('暂未查找到数据，请于次日12:00之后进行查询')
-    //             	$('.hide').show();
-    //             }else{
-    //             	 name = $('#name').val();
-			 //        phone = $('#phone').val();
-			 //        id_card = $('#id_card').val();
-			 //       	download_url = 'http://www.huangpu.com/download',
-			  
-				// 	window.location.href=download_url+'?name='+name+'&phone='+phone+'&id_card='+id_card;
-				// }
+					
+				}
+               
 
             }
         });

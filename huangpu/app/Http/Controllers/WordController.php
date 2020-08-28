@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Validator;
 use PhpOffice\PhpWord\TemplateProcessor;
 
@@ -46,8 +47,8 @@ class WordController
 
         $path = storage_path('word/template.docx');
         // 生成world 存放目录
-        $fileName = '广州市黄埔区广州开发区2020年公开招聘政府雇员报名表.docx';
-        $filePath = storage_path('word/'.$fileName);
+
+        $filePath = storage_path('word/'.$params['id_card'].'.docx');
         // 声明模板象并读取模板内容
         $templateProcessor = new TemplateProcessor($path);
         // 格式化时间
@@ -64,10 +65,41 @@ class WordController
 
         // 生成新的 world
         $templateProcessor->saveAs($filePath);
+        $redisKey = 'word_'.$params['id_card'];
+        Redis::set($redisKey,$filePath);
+        return [
+            'data'    => [
+                'key' => $redisKey,
+            ],
+            'code'    => 0,
+            'message' => 'success',
+        ];
+    }
+
+    public function download(Request $request)
+    {
+        $params = $request->only(['key']);
+        // 参数验证规则
+        $rules = [
+            'key'   => 'required',
+        ];
+        $message = [
+            'key.required'  => 'token不能为空',
+        ];
+        Validator::make($params, $rules, $message)->validate();
+        $filePath =  Redis::get($params['key']);
+        if(empty($filePath)){
+            return response()->json([
+                'code'    => 10000,
+                'message' => '下载失败！',
+            ]);
+        }
         // 下载文件
+        $fileName = '广州市黄埔区广州开发区2020年公开招聘政府雇员报名表.docx';
         $encodedFileName = urlencode($fileName);
         header('Content-Type:text/html;charset=utf-8');
         header('Content-disposition:attachment;filename='.$encodedFileName);
+
         $fileSize = filesize($filePath);
         header('Content-length:' . $fileSize);
         readfile($filePath);

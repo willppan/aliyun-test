@@ -23,7 +23,8 @@ $router->post('search', 'RegisterController@search');
 
 $router->post('visit', 'VisitController@index');
 
-$router->get('download', 'WordController@index');
+$router->get('search_download', 'WordController@index');
+$router->get('download', 'WordController@download');
 
 $router->group([
     'middleware' => 'auth',
