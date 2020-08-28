@@ -280,7 +280,6 @@
         $.ajax({
             type: 'post',
             url: 'https://south.liepincc.com/search',
-            // url: 'http://www.huangpu.com/register',
             data: JSON.stringify(data),
             xhrFields: {
        			withCredentials: false    // 前端设置是否带cookie
@@ -291,7 +290,7 @@
                 if(res.code == 0){
                 	if(res.data.result == '通过'){
                 		$('.text').html('报名预审通过，请于9月1日17:00之后点击报名表格下载，下载表格后请打印并带齐相关资料按照预约时间前往指定地点进行资格审查。（详细预约时间见短信提示）')
-                	}else if(res.data.result == '通过'){
+                	}else if(res.data.result == '不通过'){
                 		$('.text').html('报名预审未通过。（原因：'+res.data.reason+'）')
                 	}else{
                 		$('.text').html('暂未查找到数据，请于次日12:00之后进行查询')
