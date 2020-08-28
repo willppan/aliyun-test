@@ -47,7 +47,7 @@ class RegisterController
             ]);
         }
 
-        if(time() >= 1599235200){
+        if(time() >= 1598947200){
             return response()->json([
                 'code'    => 10000,
                 'message' => '预约已结束！',
@@ -55,26 +55,11 @@ class RegisterController
         }
 
         if ($params['date'] == '9月2日') {
-            if(time() >= 1599062400){
-                return response()->json([
-                    'code'    => 10000,
-                    'message' => '预约时间已过，请重新选择！',
-                ]);
-            }
+
         } else if ($params['date'] == '9月3日') {
-            if(time() >= 1599148800){
-                return response()->json([
-                    'code'    => 10000,
-                    'message' => '预约时间已过，请重新选择！',
-                ]);
-            }
+
         } else if ($params['date'] == '9月4日') {
-            if(time() >= 1599235200){
-                return response()->json([
-                    'code'    => 10000,
-                    'message' => '预约时间已过，请重新选择！',
-                ]);
-            }
+
         } else {
             return response()->json([
                 'code'    => 10000,

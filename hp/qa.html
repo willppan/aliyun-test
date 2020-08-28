@@ -72,17 +72,18 @@
 			text-decoration: none;
 		}
 		.t2{
-			font-size: 18px;
+			font-size: 16px;
 			display: block;
 			height: 20px;
 			line-height: 20px;
 			margin: 0 auto;
 			cursor: pointer;
 			text-align: center;
-			padding: 5px 5px;
+			border-bottom: 2px solid rgb(57,117,222);
+			padding: 5px 0px;
 			width: 110px;
-			/*margin: 20px 5px 22px 5px;*/
-			color: black;
+			margin: 1px 5px;
+			color: white;
 			text-decoration: none;
 		}
 		*{
@@ -130,7 +131,7 @@
 
 					<span class="xiala t1" style="position: relative;">
 						<span >报名入口</span>
-						<div class="lie" style="position: absolute;left: -20px;top: 30px;background-color: white;border-radius: 5px;display: none;">
+						<div class="lie" style="position: absolute;left: -20px;top: 30px;background: rgb(57,117,222);border-radius: 5px;display: none;">
 							<a href="gangwei.html" class="t2">岗位报名</a>
 							<a href="yushen.html" class="t2">报名预审查询</a>
 							<a href="xiazai.html" class="t2">报名表格下载</a>
@@ -277,7 +278,11 @@
 	})
 
 
-
+	$('.lie a').hover(function(){
+		$(this).addClass('activite')
+	},function(){
+		$(this).removeClass('activite')
+	})
 </script>
 </html>
 

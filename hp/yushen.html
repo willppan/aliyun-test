@@ -49,17 +49,18 @@
 			text-decoration: none;
 		}
 		.t2{
-			font-size: 18px;
+			font-size: 16px;
 			display: block;
 			height: 20px;
 			line-height: 20px;
 			margin: 0 auto;
 			cursor: pointer;
 			text-align: center;
-			padding: 5px 5px;
+			border-bottom: 2px solid rgb(57,117,222);
+			padding: 5px 0px;
 			width: 110px;
-			/*margin: 20px 5px 22px 5px;*/
-			color: black;
+			margin: 1px 5px;
+			color: white;
 			text-decoration: none;
 		}
 		*{
@@ -167,7 +168,7 @@
 
 					<span class="xiala t1 activite" style="position: relative;">
 						<span >报名入口</span>
-						<div class="lie" style="position: absolute;left: -20px;top: 30px;background-color: white;border-radius: 5px;display: none;">
+						<div class="lie" style="position: absolute;left: -20px;top: 30px;background: rgb(57,117,222);border-radius: 5px;display: none;">
 							<a href="gangwei.html" class="t2">岗位报名</a>
 							<a href="yushen.html" class="t2">报名预审查询</a>
 							<a href="xiazai.html" class="t2">报名表格下载</a>
@@ -192,7 +193,8 @@
 		<div class="mid">
 			<img src="7/yushen.jpg" width="100%" style="margin:10px 0">
 			<p style="font-family: cu;text-align: center;font-size: 30px;margin-top: 30px;font-weight: bolder;">报名预审查询</p>
-			<p style="width: 100%;height:20px;border-bottom: 1px solid #b5b5b5"></p>
+			<p class="ptop" style="font-family: 'cu';font-size: 18px;font-weight: bolder;color: red;padding: 20px 0 0 0 ;">注：报名预审通过后，请进行报名表格下载并打印。</p>
+			<p style="width: 100%;height:0px;border-bottom: 1px solid #b5b5b5"></p>
 			<p style="font-family: 'xi';font-size: 14px">8月28日9：00至8月31日24：00前报名，请于次日12：00之后进行报名预审查询</p>
 			<p style="font-family: 'xi';font-size: 14px;margin-top: -10px;">9月01日00：00至9月01日16：00前报名，请于当天19：00之后进行报名预审查询</p>
 
@@ -297,6 +299,7 @@
                 }else{
                 	$('.text').html('暂未查找到数据，请于次日12:00之后进行查询')
                 }
+                $('.hide').show();
             }
         });
 	})
@@ -312,7 +315,11 @@
 		$('.hide').hide();
 	});
 
-	
+	$('.lie a').hover(function(){
+		$(this).addClass('activite')
+	},function(){
+		$(this).removeClass('activite')
+	})
 
 </script>
 </html>
