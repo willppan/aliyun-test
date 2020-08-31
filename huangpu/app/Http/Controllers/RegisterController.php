@@ -78,7 +78,7 @@ class RegisterController
             ->where('term',$params['term'])
             ->count();
 
-        if($count >= 300){
+        if($count >= 500){
             return response()->json([
                 'code'    => 10000,
                 'message' => '该时间段已约满，请选择其他时间预约！',

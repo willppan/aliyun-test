@@ -63,6 +63,19 @@
 			padding:5px 18px 5px 15px;
 		}
 
+		.page{
+			padding: 5px 10px;
+			border:1px solid #DDDDDD;
+			color: #888888;
+			cursor: pointer;
+		}
+
+		.page_box{
+			padding: 5px 10px;
+			border:1px solid #DDDDDD;
+			color: #888888;
+		}
+
 	</style>
 </head>
 <body>
@@ -142,6 +155,15 @@
 
 				</table>
 			</div>
+			<div class="" style="width: 100%;text-align: center;margin-top: 50px;">
+				<span class="page first" val="1">首页</span>
+				<span class="page prev">上一页</span>
+				<span class="page_box">
+					第 <span class="apage">1</span> 页 | 共 <span class="tpage"></span> 页 | 共 <span class="total"></span> 条数据
+				</span>
+				<span class="page next">下一页</span>
+				<span class="page last">尾页</span>
+			</div>
 		</div>
 		<div style="margin-top:100px;width: 100%;text-align: center;">
 			<p class="ziti">Copyright © 2006-2020 Liepin campus. All Rights Reserved.</p>
@@ -193,6 +215,26 @@
 						table_data += '<tr><td>'+v.name+'</td><td>'+v.phone+'</td><td>'+v.id_card+'</td><td>'+v.company+'</td><td>'+v.date+'</td><td>'+v.term+'</td></tr>';
 					});
 					$('#data').html(table_data);
+
+					if(res.meta.page > 1){
+						prev = res.meta.page - 1;
+					}else{
+						prev = 1;
+					}
+
+					if(res.meta.page < res.meta.last_page){
+						next = parseInt(res.meta.page) + 1;
+					}else{
+						next = res.meta.last_page;
+					}
+
+					$('.prev').attr('val',prev);
+					$('.next').attr('val',next);
+					$('.last').attr('val',res.meta.last_page);
+
+					$('.apage').html(res.meta.page);
+					$('.tpage').html(res.meta.last_page);
+					$('.total').html(res.meta.total);
 				}else{
 					alert('用户未登录！');
 					window.location.href=success_url
@@ -204,7 +246,7 @@
 		var data = {
 			'company':$('#company').val(),
 			'date':$('#date').val(),
-			'term':$('#term').val(),
+			'term':$('#term').val()
 		};
 		$.ajax({
 			type: 'get',
@@ -222,6 +264,26 @@
 						table_data += '<tr><td>'+v.name+'</td><td>'+v.phone+'</td><td>'+v.id_card+'</td><td>'+v.company+'</td><td>'+v.date+'</td><td>'+v.term+'</td></tr>';
 					});
 					$('#data').html(table_data);
+
+					if(res.meta.page > 1){
+						prev = res.meta.page - 1;
+					}else{
+						prev = 1;
+					}
+
+					if(res.meta.page < res.meta.last_page){
+						next = parseInt(res.meta.page) + 1;
+					}else{
+						next = res.meta.last_page;
+					}
+
+					$('.prev').attr('val',prev);
+					$('.next').attr('val',next);
+					$('.last').attr('val',res.meta.last_page);
+
+					$('.apage').html(res.meta.page);
+					$('.tpage').html(res.meta.last_page);
+					$('.total').html(res.meta.total);
 				}else{
 					alert('用户未登录！');
 					window.location.href=success_url
@@ -237,6 +299,56 @@
 		window.location.href=export_url+'?company='+company+'&date='+date+'&term='+term;
 	});
 
+	$('.page').on('click', function() {
+		var data = {
+			'company':$('#company').val(),
+			'date':$('#date').val(),
+			'term':$('#term').val(),
+			'page':$(this).attr('val')
+		};
+		$.ajax({
+			type: 'get',
+			url: list_url,
+			data: data,
+			xhrFields: {
+				withCredentials: false    // 前端设置是否带cookie
+			},
+			contentType: "application/json;charset=utf-8",
+			dataType:'json',
+			success: function(res){
+				if(res.code == 0){
+					var table_data = '<tr><th>姓名</th><th>手机号</th><th>身份证</th><th>单位名称</th><th>预约日期</th><th>预约场次</th></tr>';
+					$.each(res.data,function(k,v){
+						table_data += '<tr><td>'+v.name+'</td><td>'+v.phone+'</td><td>'+v.id_card+'</td><td>'+v.company+'</td><td>'+v.date+'</td><td>'+v.term+'</td></tr>';
+					});
+					$('#data').html(table_data);
+
+					if(res.meta.page > 1){
+						prev = res.meta.page - 1;
+					}else{
+						prev = 1;
+					}
+
+					if(res.meta.page < res.meta.last_page){
+						next = parseInt(res.meta.page) + 1;
+					}else{
+						next = res.meta.last_page;
+					}
+
+					$('.prev').attr('val',prev);
+					$('.next').attr('val',next);
+					$('.last').attr('val',res.meta.last_page);
+
+					$('.apage').html(res.meta.page);
+					$('.tpage').html(res.meta.last_page);
+					$('.total').html(res.meta.total);
+				}else{
+					alert('用户未登录！');
+					window.location.href=success_url
+				}
+			}
+		});
+	});
 
 </script>
 </html>

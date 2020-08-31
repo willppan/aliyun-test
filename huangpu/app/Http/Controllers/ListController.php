@@ -17,6 +17,8 @@ class ListController
     public function index(Request $request)
     {
         $params = $request->only(['company','date','term']);
+        $page = $request->input('page',1);
+        $size = $request->input('size',50);
 
         $data = Register::query()
             ->when(!empty($params['date']),function ($query) use($params){
@@ -28,11 +30,17 @@ class ListController
             ->when(!empty($params['company']),function ($query) use($params){
                 $query->where('company',$params['company']);
             })
-            ->get()
-            ->toArray();
-
+            ->paginate($size);
+        $data = $data->toArray();
+        $meta = [
+            'page'      => $page,
+            'size'      => $size,
+            'total'     => $data['total'],
+            'last_page' => $data['last_page'],
+        ];
         return [
-            'data'    => $data,
+            'data'    => $data['data'],
+            'meta'    => $meta,
             'code'    => 0,
             'message' => 'success',
         ];
