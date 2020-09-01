@@ -366,8 +366,8 @@
 				<div class="hide">
 					<span class="closebak" style="position: absolute;right: 5px;top: 3px;cursor: pointer;">x</span>
 					<div style="margin-top: 5px;">
-						<p class="text" style="font-weight: bolder;">
-							
+						<p class="text" style="font-weight: bolder;margin-top: 40px">
+						
 						</p>
 					
 					</div>
@@ -524,7 +524,7 @@
 			       	download_url = 'https://south.liepincc.com/download';
 			       	window.location.href=download_url+'?key='+key;
                 }else{                	
-			       	$('.text').html('暂未查找到数据，请于次日12:00之后进行查询')
+			       	$('.text').html(res.message)
                 	$('.hide').show();		
 				}   
 
