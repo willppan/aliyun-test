@@ -157,7 +157,16 @@
 		.texd{
 			text-decoration: underline;
 		}
-
+		.text{
+			margin-bottom: 80px;
+		}
+		.text p{
+			font-size: 14px;
+			color: #777777;
+		}
+		.text h6{
+			font-size: 14px;
+		}
 
 	</style>
 </head>
@@ -178,7 +187,13 @@
 						</div>
 					</span>	
 					
-					<a href="yuyue.html" class="t1 activite">资格审查预约</a>
+					<span class="xiala t1 activite" style="position: relative;">
+						<span >资格审查</span>
+						<div class="lie" style="position: absolute;left: -20px;top: 30px;background: rgb(57,117,222);border-radius: 5px;display: none;">
+							<a href="yuyue.html" class="t2">资格审查预约</a>
+							<a href="changdi.html" class="t2">场地查询</a>
+						</div>
+					</span>
 
 					<a href="queren.html" class="t1">笔试资格确认</a>
 					
@@ -295,12 +310,8 @@
 						</p> -->
 					</div>
 				</div>
-		
-			
 		</div>
-				
-			</div>
-			<div style="clear: both;"></div>
+		<div style="clear: both;"></div>
 		</div>
 		<div style="margin-top:820px">
 			<p class="ziti">Copyright © 2006-2020 Liepin campus. All Rights Reserved.</p>
@@ -385,9 +396,9 @@
 	});
 
 	$('.xiala').hover(function(){
-		$('.lie').show();
+		$(this).find('.lie').show();
 	},function(){
-		$('.lie').hide();
+		$(this).find('.lie').hide();
 	})
 
 	$('.lie a').hover(function(){

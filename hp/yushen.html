@@ -175,7 +175,13 @@
 						</div>
 					</span>	
 					
-					<a href="yuyue.html" class="t1">资格审查预约</a>
+					<span class="xiala t1" style="position: relative;">
+						<span >资格审查</span>
+						<div class="lie" style="position: absolute;left: -20px;top: 30px;background: rgb(57,117,222);border-radius: 5px;display: none;">
+							<a href="yuyue.html" class="t2">资格审查预约</a>
+							<a href="changdi.html" class="t2">场地查询</a>
+						</div>
+					</span>
 
 					<a href="queren.html" class="t1">笔试资格确认</a>
 					
@@ -304,9 +310,9 @@
 	})
 
 	$('.xiala').hover(function(){
-		$('.lie').show();
+		$(this).find('.lie').show();
 	},function(){
-		$('.lie').hide();
+		$(this).find('.lie').hide();
 	})
 
 
