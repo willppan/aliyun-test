@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>广州市黄埔区2020年公开招聘政府雇员</title>
+	<style>
+		html{
+			background-color: white;
+		}
+		@font-face {    
+			font-family: 'xi';    
+			src: url('ziti1.ttf'); 
+		}
+		@font-face {    
+			font-family: 'cu';    
+			src: url('ziti2.ttf'); 
+		}
+		.top{
+			background: rgb(57,117,222);
+			width: 100%;
+			font-family: "xi";
+		}
+		.excel a{
+			font-family: "cu"!important;
+			font-size: 14px;
+			color: black;
+		}
+		.ziti{
+			text-align: center;
+			font-size: 14px;
+			font-family: "cu"!important;
+		}
+		.banner{
+			padding: 0 25%;
+			margin: 0 auto;
+		}
+		.t1{
+			font-size: 18px;
+			display: block;
+			height: 20px;
+			line-height: 20px;
+			margin: 0 auto;
+			cursor: pointer;
+			text-align: center;
+			padding: 5px 3px;
+			margin: 20px 5px 22px 5px;
+			float: left;
+			color: white;
+			text-decoration: none;
+		}
+		.t2{
+			font-size: 16px;
+			display: block;
+			height: 20px;
+			line-height: 20px;
+			margin: 0 auto;
+			cursor: pointer;
+			text-align: center;
+			border-bottom: 2px solid rgb(57,117,222);
+			padding: 5px 0px;
+			width: 110px;
+			margin: 1px 5px;
+			color: white;
+			text-decoration: none;
+		}
+		*{
+			font-family: "xi";
+			margin: 0;
+			padding: 0;
+		}
+		.mid{
+			padding: 20px 25%;
+		}
+		.activite{
+			border-bottom: 2px solid white;
+		}
+		p{
+			padding: 5px;
+			line-height: 25px;
+		}
+		@media (min-width:200px) and (max-width:1000px) {
+			*{
+				font-size:12px!important;
+			}
+			p{
+				font-size:12px!important;
+			}
+			p span{
+				font-size:12px!important;
+			}
+			.t1{
+				padding: 0px;
+			}
+			.logo{
+				width: 50px!important;
+				margin-top: 20px!important;
+			}
+
+			 .hide{
+				position: fixed!important;
+				margin:auto!important;
+				left:0!important;
+				right:0!important;
+				top:0!important;
+				bottom:300px!important;
+			}
+		}
+		input{
+                border: 1px solid #b5b5b5;
+                padding: 10px 10px;
+                border-radius: 5px;
+                margin-right: 20px;
+        }
+
+
+        select {
+          /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+          border: solid 1px #b5b5b5;
+          border-radius: 5px;
+         
+          /*很关键：将默认的select选择框样式清除*/
+          appearance:none;
+          -moz-appearance:none;
+          -webkit-appearance:none;
+         
+          /*在选择框的最右侧中间显示小箭头图片*/
+          background-image: url("6/1.png");
+          background-size: 15px;
+          background-repeat: no-repeat;
+          background-position: right center;
+          background-attachment:scroll;
+         
+         
+          /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+          padding:10px 18px 10px 15px;
+        }
+
+        .hide{
+			-webkit-box-shadow:0px 5px 5px #c8c8c8 ;
+			-moz-box-shadow:0px 5px 5px #c8c8c8 ;
+			box-shadow:0px 5px 5px #c8c8c8 ;
+			position: fixed;
+			margin:auto;
+			left:0;
+			right:0;
+			top:0;
+			bottom:0;
+			width: 600px;
+			height: 130px;
+			border:1px solid black;
+			padding: 15px 20px;
+			border-radius: 8px;
+			background-color: white;
+			font-family: "cu"!important;
+			display: none;
+		}
+		.texd{
+			text-decoration: underline;
+		}
+		.text{
+			margin-bottom: 80px;
+		}
+		.text p{
+			font-size: 14px;
+			color: #777777;
+		}
+		.text h6{
+			font-size: 14px;
+		}
+
+	</style>
+</head>
+<body>
+		<div class="top">
+			<div class="banner">
+				<img src="1/logo.png" width="100px" style="margin: 15px 0 0 10px ;" class="logo">
+				<div style="float: right;font-weight: bold;">
+					
+					<a href="index.html" class="t1">首页</a>
+
+					<span class="xiala t1" style="position: relative;">
+						<span >报名入口</span>
+						<div class="lie" style="position: absolute;left: -20px;top: 30px;background: rgb(57,117,222);border-radius: 5px;display: none;">
+							<a href="gangwei.html" class="t2">岗位报名</a>
+							<a href="yushen.html" class="t2">报名预审查询</a>
+							<a href="xiazai.html" class="t2">报名表格下载</a>
+						</div>
+					</span>	
+					
+					<span class="xiala t1 activite" style="position: relative;">
+						<span >资格审查</span>
+						<div class="lie" style="position: absolute;left: -20px;top: 30px;background: rgb(57,117,222);border-radius: 5px;display: none;">
+							<a href="yuyue.html" class="t2">资格审查预约</a>
+							<a href="changdi.html" class="t2">场地查询</a>
+						</div>
+					</span>
+
+					<a href="queren.html" class="t1">笔试资格确认</a>
+					
+					<a href="chaxun.html" class="t1">笔试成绩查询</a>
+
+					<a href="qa.html" class="t1">报考指南</a>	
+
+					<div style="clear: both;"></div>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+		
+		<img src="1/banner.jpg" width="100%">
+		<div class="mid">
+			<img src="6/yuyue.jpg" width="100%" style="margin:10px 0">
+			<p style="font-family: cu;text-align: center;font-size: 30px;margin-top: 30px;font-weight: bolder;">资格审查预约</p>
+			<p class="ptop" style="font-family: 'cu';font-size: 18px;font-weight: bolder;color: red;padding: 20px 0 0 0 ;">注：资格审查预约成功后，请进行报名预审查询。</p>
+
+			<p style="width: 100%;height:0px;border-bottom: 1px solid #b5b5b5"></p>
+			<p style="font-family: 'xi';font-size: 14px">资格审查时间：于2020年9月2日至2020年9月4日进行现场资格审查，地点位于用人单位主管部门，具体时间和地点于报名结束前在猎聘网站公布。</p>
+			<div style="margin-top: 20px;width: 100%;text-align: center;height: 100px">
+				<div class="wd" style="float: left;position: relative;margin-top: 30px;width: 25%">
+					<p style="color: #b5b5b5;font-size: 14px;padding-left: 5px;position: absolute;left: 0px;top: -31px">姓名</p>
+					<input id="name" style=" width: 80%;" type="" name="">
+				</div>
+				<div class="wd" style="float: left;position: relative;margin-top: 30px;width: 25%">
+					<p style="color: #b5b5b5;font-size: 14px;padding-left: 5px;position: absolute;left: 0px;top: -31px">手机号</p>
+					<input id="phone" style=" width: 80%" type="" name="">
+				</div>
+				<div class="wd" style="float: left;position: relative;margin-top: 30px;width: 40%">
+					<p style="color: #b5b5b5;font-size: 14px;padding-left: 5px;position: absolute;left: 0px;top: -31px">身份证号</p>
+					<input id="id_card" style=" width: 80%" type="" name="">
+				</div>
+				<div style="clear: both;"></div>
+
+				<div style="width: 100%;text-align: left;margin-top: 30px;position: relative;">
+					<p style="color: #b5b5b5;font-size: 14px;padding-left: 5px;position: absolute;left: 0px;top: -31px">单位名称</p>
+					<select id="company">
+						<option value="">--请选择单位名称--</option>
+						<option>中共广州市黄埔区委办公室、中共广州开发区工作委员会办公室、广州开发区管委会办公室</option>
+						<option>广州市黄埔区信访局</option>
+						<option>广州市黄埔区人才交流服务中心、广州开发区人才交流服务中心</option>
+						<option>黄埔区委组织部、广州开发区党工委组织部</option>
+						<option>广州市黄埔区工业和信息化局</option>
+						<option>广州开发区国有资产监督管理局</option>
+						<option>广州开发区行政服务管理中心 广州市黄埔区政务服务中心</option>
+						<option>中共广州市黄埔区纪律检查委员会、中共广州开发区纪律检查工作委员会、黄埔区监察委</option>
+						<option>广州开发区金融工作局</option>
+						<option>广州市黄埔区科学技术局</option>
+						<option>广州开发区黄埔临港经济区管理委员会</option>
+						<option>中国国际贸易促进委员会广州市黄埔区委员会</option>
+						<option>广州市黄埔区商务局（广州开发区商务局）</option>
+						<option>黄埔区人大常委会办公室</option>
+						<option>广州开发区营商环境改革局</option>
+						<option>广州开发区政策研究室</option>
+						<option>广州市黄埔区统计调查队</option>
+						<option>广州市黄埔区农畜牧业管理综合执法大队</option>
+						<option>中新广州知识城开发建设办公室</option>
+						<option>广州市黄埔区住房和城乡建设局</option>
+						<option>广州市黄埔区建设工程质量安全监督站</option>
+						<option>广州开发区房地产管理所</option>
+						<option>广州市黄埔区城市管理和综合执法局</option>
+						<option>广州市黄埔区卫生健康局</option>
+					</select>
+				</div>
+
+				<div style="width: 100%;text-align: left;margin-top: 30px;position: relative;">
+					<div style="float: left;position: relative;margin-right: 25px">
+						<p style="color: #b5b5b5;font-size: 14px;padding-left: 5px;position: absolute;left: 0px;top: -31px">预约日期</p>
+						<select id="date">
+							<option value="">--请选择预约日期--</option>
+							<option>9月2日</option>
+							<option>9月3日</option>
+							<option>9月4日</option>
+						</select>
+					</div>
+
+					<div style="float: left;position: relative;">
+						<p style="color: #b5b5b5;font-size: 14px;padding-left: 5px;position: absolute;left: 0px;top: -31px">预约场次</p>
+						<select id="term">
+							<option value="">--请选择预约场次--</option>
+							<option>上午9:00-11:30</option>
+							<option>下午14:00-17:00</option>
+						</select>
+					</div>
+				</div>
+				<div style="clear: both;"></div>
+			
+				<div style="text-align: center;margin-top:40px;" id="btn">
+						<span style="padding: 6px 20px;background-color: #3c76e1;color:white;border-radius: 5px;">资格审查预约</span>
+				</div>
+
+
+
+				<div class="hide">
+					<span class="close" style="position: absolute;right: 5px;top: 3px;cursor: pointer;">x</span>
+					<div style="margin-top: 5px;">
+						<p style="font-weight: bolder;">
+							资格审查预约成功
+						</p>
+						<p>
+							8月28日09：00至8月31日24：00前报名，请于次日12：00之后进行预审查询
+						</p>
+						<p>
+							9月01日00：00至9月01日16：00前报名，请于当天17：00之后进行预审查询
+						</p>
+						<!-- <p style="text-align: center;"> 
+							<span style="position: relative;">
+								<span style="position: absolute;left: 10px;top:2px"><img src="6/w.jpg" width="18px"></span>
+								<a style="margin-left: 30px;display: inline-block;" href="6/广州市黄埔区广州开发区2020年公开招聘政府雇员报名表.doc">广州市黄埔区广州开发区2020年公开招聘政府雇员报名表</a>
+							</span>
+							
+						</p> -->
+					</div>
+				</div>
+		</div>
+		<div style="clear: both;"></div>
+		</div>
+		<div style="margin-top:820px">
+			<p class="ziti">Copyright © 2006-2020 Liepin campus. All Rights Reserved.</p>
+            <p class="ziti">猎聘校园 版权所有</p>
+		</div>
+
+	</div>
+</body>
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+
+	$('#btn').on('click', function(){
+
+        if($('#name').val().length == 0){
+			alert('姓名不能为空！');
+			return;
+		}
+
+		if($('#phone').val().length == 0){
+			alert('手机号不能为空！');
+			return;
+		}
+		if($('#id_card').val().length == 0){
+			alert('身份证号不能为空！');
+			return;
+		}
+		if($('#company').val().length == 0){
+			alert('请选择单位名称！');
+			return;
+		}
+		if($('#date').val().length == 0){
+			alert('请选择预约日期！');
+			return;
+		}
+		if($('#term').val().length == 0){
+			alert('请选择预约场次！');
+			return;
+		}
+
+		var data = {};
+
+        data.name = $('#name').val();
+        data.phone = $('#phone').val();
+        data.id_card = $('#id_card').val();
+        data.company = $('#company').val();
+        data.date = $('#date').val();
+        data.term = $('#term').val();
+
+		var phone_pattern = /^1[34578]\d{9}$/;
+		if(!phone_pattern.test(data.phone)){
+			alert('手机号格式错误！');
+			return;
+		}
+		var id_card_pattern = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+		if(!id_card_pattern.test(data.id_card)){
+			alert('身份证号格式错误！');
+			return;
+		}
+
+        
+        $.ajax({
+            type: 'post',
+            url: 'https://south.liepincc.com/register',
+            data: JSON.stringify(data),
+            xhrFields: {
+       			withCredentials: false    // 前端设置是否带cookie
+		    },
+            contentType: "application/json;charset=utf-8",
+            dataType:'json',
+            success: function(res){
+                if(res.code == 0){
+                	$('.hide').show();
+                }else{
+                	alert(res.message);
+                }
+            }
+        });
+	})
+
+	$('.close').on('click', function(){
+		$('.hide').hide();
+	});
+
+	$('.xiala').hover(function(){
+		$(this).find('.lie').show();
+	},function(){
+		$(this).find('.lie').hide();
+	})
+
+	$('.lie a').hover(function(){
+		$(this).addClass('activite')
+	},function(){
+		$(this).removeClass('activite')
+	})
+
+</script>
+</html>
+
+
+
+
