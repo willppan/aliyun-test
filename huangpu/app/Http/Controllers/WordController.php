@@ -27,21 +27,19 @@ class WordController
 
         // 参数验证规则
         $rules = [
-//            'id_card' => ['required','regex:
-///^[1-9]\d{5}(18|19|20|(3\d))\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/'],
-            'phone'     => 'required|regex:/^1[345789][0-9]{9}$/',
+            'id_card'   => 'required',
+            'phone'     => 'required',
             'name'      => 'required',
+            'hunyin'    => 'required',
             'name1'     => 'required',
             'guanxi1'   => 'required',
             'age1'      => 'required',
             'zhengzhi1' => 'required',
             'gongzuo1'  => 'required',
-            'hunyin'    => 'required',
-
         ];
         $message = [
-//            'id_card.*' => '身份证号格式错误',
-            'phone.*'            => '手机号格式错误',
+            'id_card.required'   => '身份证号不能为空',
+            'phone.required'     => '手机号不能为空',
             'name.required'      => '姓名不能为空',
             'hunyin.required'    => '婚姻关系不能为空',
             'name1.required'     => '家庭成员姓名不能为空',
