@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+.track{width: 2px;height: 2px;background-color:#000;position:absolute;}
+</style>
+</head>
+<body>
+
+<div id="box" style="width: 1000px;height: 100px;border:1px solid black;margin: 0 auto;position: relative;">
+	<div id="fly" style="height: 20px;width: 30px;background-color: pink;border-radius:50%;position: absolute;left: 30px;top:50px;"></div>
+</div>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script>
+// alert(test.style.left);
+// show()
+boxWidth = $('#box').width();
+boxHeight = $('#box').height();
+flyWidth = $('#fly').width();
+flyHeight = $('#fly').height();
+show();
+function show(){
+	// X轴(正弦运动中心线的位置)
+	h = boxHeight/2;
+	// 在X轴所处的位置
+	x = 0;
+	// 在Y轴所处的位置
+	y = h;
+	// 小球运动的速度
+	v = 5;
+
+	setInterval(function(){
+		if(x > boxWidth) {
+		    x = 0;
+		}
+		// 横轴移动
+		x += v;
+		// 计算在纵轴的位置,中心位置加上偏移
+		// 计算弧度,因为Math.sin()的参数是弧度,将整个宽度看为一个周期,X处所占的弧度就为,起点到X距离与宽度之比乘以2π
+		let radian = x / (boxWidth/3.25) * Math.PI * 2;
+		// 计算偏移高度,因为Math.sin()返回值是-1~1的数字,所以要将这个值转化为真正移动的高度,就是容器的一班高度减去球直径
+		let height = (boxHeight - (flyHeight/2) * 2) / 2
+		y = h - Math.sin(radian) * height;
+
+		fly.style.left = (x - flyWidth/2) + 'px';
+        fly.style.top = (y - flyHeight/2) + 'px';
+
+	},20)
+
+}
+
+
+</script>
+</body>
+</html>
