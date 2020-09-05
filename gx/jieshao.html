@@ -141,7 +141,8 @@
 		margin:auto;
 		right:0px;
 		left:0px;
-		top:100px;
+		top:0px;
+		bottom:50px;
 		width: 730px;
 		height: 400px;
 		z-index: 1100;
@@ -203,16 +204,16 @@
 			
 			<div>
 			<!-- <div class="text" style="opacity: 0;margin-left: -100px;width: 100%"> -->
-				<img src="2/1.png" width="100px" style="margin-bottom: 20px">		
-				<p>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i style="font-size: 18px;">广东省广新控股集团有限公司</i>是广东省政府全资企业，其前身是2000年组建的广东省外贸集团有限公司，2011年更名为广东省广新控股集团有限公司，2019年12月广新集团、丝纺集团重组合并，广新集团成为合并后的新主体。2019年集团营业收入672亿元，位列中国企业500强第317位、中国服务业企业500强第120位、中国跨国公司100大第93位、广州企业100强第13位，旗下共有11家企业上榜广东企业500强排行榜，获评主体信用“AAA”级。
+				<img src="2/1.png" width="100%" style="margin-bottom: 20px">		
+				<!-- <p> -->
+			<!-- 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i style="font-size: 18px;">广东省广新控股集团有限公司</i>是广东省政府全资企业，其前身是2000年组建的广东省外贸集团有限公司，2011年更名为广东省广新控股集团有限公司，2019年12月广新集团、丝纺集团重组合并，广新集团成为合并后的新主体。2019年集团营业收入672亿元，位列中国企业500强第317位、中国服务业企业500强第120位、中国跨国公司100大第93位、广州企业100强第13位，旗下共有11家企业上榜广东企业500强排行榜，获评主体信用“AAA”级。
 				</p>
 				<p>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经过20年的发展，集团已由单一的传统外贸型企业转型为服务省委省政府发展战略的新兴产业国有资本投资公司。集团坚持创新引领、战略投资、资本运营“三轮驱动”，以“资本投资”为主业，重点发展新材料、生物医药与食品、数字创意与融合服务三大板块业务。集团控股和参股了境内外16家上市公司（含新三板公司），拥有29家高新技术企业、11家国家级和41家省级研发机构、专利及软件著作权等1000余项，开展研发项目超250个，旗下高新技术企业数量、高新技术产业产值、国家级和省级研发中心数量均居广东省属企业前列。
 				</p>
 				<p>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未来，集团始终坚持服务广东省发展战略大局，秉持“引领新兴产业，共创美好未来”的企业使命，围绕“资本投资”主业，优化国有资本布局，通过开展投融资、产业培育和资本运作等，发挥投资引导和结构调整作用，推动产业集聚，培育核心竞争力和创新能力，努力建设成为有价值、负责任、受尊重的国际化资本投资公司。
-				</p>
+				</p> -->
 			</div>
 		</div>
 	
@@ -227,7 +228,7 @@ width = $(window).width();
 $('.list').css("height", height); 
 $('.quan').css("width", width*0.8); 
 $('.banner').css("width", width); 
-$('.mid').css("top", height*0.15); 
+// $('.mid').css("top", height*0.15); 
 
 $(window).on("resize", function(){
 	height = $(window).height();
@@ -235,7 +236,7 @@ $(window).on("resize", function(){
 	$('.list').css("height", height); 
 	$('.quan').css("width", width); 
 	$('.banner').css("width", width); 
-	$('.mid').css("top", height*0.15); 
+	// $('.mid').css("top", height*0.15); 
 
 });
 
