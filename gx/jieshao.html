@@ -227,6 +227,7 @@ width = $(window).width();
 $('.list').css("height", height); 
 $('.quan').css("width", width*0.8); 
 $('.banner').css("width", width); 
+$('.mid').css("top", height*0.15); 
 
 $(window).on("resize", function(){
 	height = $(window).height();
@@ -234,6 +235,7 @@ $(window).on("resize", function(){
 	$('.list').css("height", height); 
 	$('.quan').css("width", width); 
 	$('.banner').css("width", width); 
+	$('.mid').css("top", height*0.15); 
 
 });
 
