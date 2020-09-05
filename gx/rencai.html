@@ -127,6 +127,8 @@
 		height: 400px;
 		z-index: 1100;
 		list-style:none;
+		font-weight: bold;
+		font-family: '微软雅黑';
 	}
 	.ul li{
 		padding: 20px 5px;
@@ -141,8 +143,9 @@
 		margin:auto;
 		right:0px;
 		left:0px;
-		top:100px;
-		width: 40%;
+		top:0px;
+		bottom:100px;
+		width: 60%;
 		height: 400px;
 		z-index: 1100;
 		/*border: 1px solid red;*/
@@ -150,7 +153,12 @@
 		font-family: '黑体';
 	}
 
-	
+	.activity{
+		border-bottom: 2px solid #f9d295;
+	}
+	.ul li:hover > a{
+		border-bottom: 2px solid #f9d295;
+	}
 </style>
 </head>
 <body>
@@ -178,8 +186,8 @@
 		<img class="star5" src="1/star2.png">
 
 
-		<img class="fly1" src="1/fly1.png">
-		<img class="fly2" src="1/fly2.png">
+		<!-- <img class="fly1" src="1/fly1.png">
+		<img class="fly2" src="1/fly2.png"> -->
 	
 	
 		<ul class="ul">
@@ -188,13 +196,14 @@
 			<li><a href="jigou.html">招聘机构</a></li>
 			<li><a href="liucheng.html">招聘流程</a></li>
 			<li><a href="xingcheng.html">招聘行程</a></li>
-			<li><a href="rencai.html">人才战略</a></li>
+			<li><a class="activity" href="rencai.html">人才战略</a></li>
 		</ul>
 
 		<div class="mid">
-			<div class="text" style="width: 100%">
+			<div style="width: 100%;position: absolute;right:0px;left:0px;top:0px;bottom: 0px;margin:auto;text-align: center;">
+				<img src="6/4.png" width="55%">
 			<!-- <div class="text" style="margin-left: -100px;opacity: 0;width: 100%"> -->
-				<img src="6/2.png" width="100px">		
+				<!-- <img src="6/2.png" width="100px">		
 				<p><span><img src="3/2.png" width="15px" style="margin-right: 10px"></span>集团管培生：年综合收入20万左右</p>
 				<p><span><img src="3/1.png" width="15px" style="margin-right: 10px"></span>11家二级公司：面议</p>
 				
@@ -212,7 +221,7 @@
 				<p style="position: relative;">
 					<span style="position: absolute;left: 0px;top:-5px;"><img src="6/1.png" width="25px" style="margin-right: 10px"></span>
 					<span style="margin-left: 30px;display: inline-block;">激励机制对标市场化，具有业绩增量奖励、员工持股等中长期激励机制。</span>
-				</p>
+				</p> -->
 			</div>
 
 		</div>
@@ -258,25 +267,25 @@ $('.logo').animate({
 
   });
 
-setInterval(function(){
-	$('.fly1').css('top',(parseInt($('.fly1').css('top')) - 1) +'px' );
-	$('.fly1').css('left',(parseInt($('.fly1').css('left')) + 3) +'px' );
+// setInterval(function(){
+// 	$('.fly1').css('top',(parseInt($('.fly1').css('top')) - 1) +'px' );
+// 	$('.fly1').css('left',(parseInt($('.fly1').css('left')) + 3) +'px' );
 
-	if(parseInt($('.fly1').css('top')) < -300){
-		$('.fly1').css('top','300px' );
-		$('.fly1').css('left','-200px' );
-	}
- },15);
+// 	if(parseInt($('.fly1').css('top')) < -300){
+// 		$('.fly1').css('top','300px' );
+// 		$('.fly1').css('left','-200px' );
+// 	}
+//  },15);
 
-setInterval(function(){
-	$('.fly2').css('bottom',(parseInt($('.fly2').css('bottom')) + 1) +'px' );
-	$('.fly2').css('left',(parseInt($('.fly2').css('left')) + 3) +'px' );
+// setInterval(function(){
+// 	$('.fly2').css('bottom',(parseInt($('.fly2').css('bottom')) + 1) +'px' );
+// 	$('.fly2').css('left',(parseInt($('.fly2').css('left')) + 3) +'px' );
 
-	if(parseInt($('.fly2').css('top')) < -300){
-		$('.fly2').css('bottom','0px' );
-		$('.fly2').css('left','-200px' );
-	}
- },15);
+// 	if(parseInt($('.fly2').css('top')) < -300){
+// 		$('.fly2').css('bottom','0px' );
+// 		$('.fly2').css('left','-200px' );
+// 	}
+//  },15);
 
  setInterval(function(){
 	$('.star1').css('top',(parseInt($('.star1').css('top')) - 1) +'px' );
@@ -356,5 +365,7 @@ $('.text').animate({
       margin:0,
       opacity:1,
 },1000);
+
+
 </script>
 </html>

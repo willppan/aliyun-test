@@ -127,6 +127,8 @@
 		height: 400px;
 		z-index: 1100;
 		list-style:none;
+		font-weight: bold;
+		font-family: '微软雅黑';
 	}
 	.ul li{
 		padding: 20px 5px;
@@ -141,7 +143,8 @@
 		margin:auto;
 		right:0px;
 		left:0px;
-		top:100px;
+		top:0px;
+		bottom:100px;
 		width: 60%;
 		height: 400px;
 		z-index: 1100;
@@ -156,6 +159,12 @@
 
 	.mid li{
 		padding: 5px 5px;
+	}
+	.activity{
+		border-bottom: 2px solid #f9d295;
+	}
+	.ul li:hover > a{
+		border-bottom: 2px solid #f9d295;
 	}
 </style>
 </head>
@@ -183,15 +192,15 @@
 		<img class="star4" src="1/star2.png">
 		<img class="star5" src="1/star2.png">
 
-
+<!-- 
 		<img class="fly1" src="1/fly1.png">
-		<img class="fly2" src="1/fly2.png">
+		<img class="fly2" src="1/fly2.png"> -->
 	
 	
 		<ul class="ul">
 			<li><a href="index.html">首页</a></li>
 			<li><a href="jieshao.html">集团介绍</a></li>
-			<li><a href="jigou.html">招聘机构</a></li>
+			<li><a class="activity" href="jigou.html">招聘机构</a></li>
 			<li><a href="liucheng.html">招聘流程</a></li>
 			<li><a href="xingcheng.html">招聘行程</a></li>
 			<li><a href="rencai.html">人才战略</a></li>
@@ -200,8 +209,8 @@
 		<div class="mid">
 			<div style="width: 400px;position: absolute;right:0px;left:0px;top:0px;margin:auto;">
 			<!-- <div class="text" style="width: 400px;position: absolute;right:0px;left:0px;top:100px;margin:auto;opacity: 0"> -->
-				<img src="3/3.png" width="100px" style="margin-left: 20px;">		
-				<ul style="margin-left: -20px;">
+				<img src="3/5.png" width="68%" style="margin-left: 20px;">		
+				<!-- <ul style="margin-left: -20px;">
 					<li><span><img src="3/2.png" width="15px"></span> 集团总部</li>
 					<li><span><img src="3/1.png" width="15px"></span> 广东省广新创新研究院有限公司</li>
 					<li><span><img src="3/2.png" width="15px"></span> 广东肇庆星湖生物科技股份有限公司</li>
@@ -214,7 +223,7 @@
 					<li><span><img src="3/1.png" width="15px"></span> 广东广新信息产业股份有限公司</li>
 					<li><span><img src="3/2.png" width="15px"></span> 新晟期货有限公司</li>
 					<li><span><img src="3/1.png" width="15px"></span> 广东省广告集团股份有限公司</li>
-				</ul>
+				</ul> -->
 				<a href=""><img src="3/4.png" style="z-index: 1100;position: absolute;right: -100px;top: 150px;width: 100px;cursor: pointer;"></a>
 			</div>
 		</div>
@@ -260,25 +269,25 @@ $('.logo').animate({
 
   });
 
-setInterval(function(){
-	$('.fly1').css('top',(parseInt($('.fly1').css('top')) - 1) +'px' );
-	$('.fly1').css('left',(parseInt($('.fly1').css('left')) + 3) +'px' );
+// setInterval(function(){
+// 	$('.fly1').css('top',(parseInt($('.fly1').css('top')) - 1) +'px' );
+// 	$('.fly1').css('left',(parseInt($('.fly1').css('left')) + 3) +'px' );
 
-	if(parseInt($('.fly1').css('top')) < -300){
-		$('.fly1').css('top','300px' );
-		$('.fly1').css('left','-200px' );
-	}
- },15);
+// 	if(parseInt($('.fly1').css('top')) < -300){
+// 		$('.fly1').css('top','300px' );
+// 		$('.fly1').css('left','-200px' );
+// 	}
+//  },15);
 
-setInterval(function(){
-	$('.fly2').css('bottom',(parseInt($('.fly2').css('bottom')) + 1) +'px' );
-	$('.fly2').css('left',(parseInt($('.fly2').css('left')) + 3) +'px' );
+// setInterval(function(){
+// 	$('.fly2').css('bottom',(parseInt($('.fly2').css('bottom')) + 1) +'px' );
+// 	$('.fly2').css('left',(parseInt($('.fly2').css('left')) + 3) +'px' );
 
-	if(parseInt($('.fly2').css('top')) < -300){
-		$('.fly2').css('bottom','0px' );
-		$('.fly2').css('left','-200px' );
-	}
- },15);
+// 	if(parseInt($('.fly2').css('top')) < -300){
+// 		$('.fly2').css('bottom','0px' );
+// 		$('.fly2').css('left','-200px' );
+// 	}
+//  },15);
 
  setInterval(function(){
 	$('.star1').css('top',(parseInt($('.star1').css('top')) - 1) +'px' );
@@ -359,5 +368,7 @@ $('.text').animate({
       top:0,
       opacity:1,
 },1000);
+
+
 </script>
 </html>
