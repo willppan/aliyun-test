@@ -373,10 +373,34 @@ $('.text').animate({
 },1000);
 
 
+ // setInterval(function(){
+	// $('.click img').animate({
+	//       width:'12%',
+	// },1000,function(){
+	//   	 $('.click img').animate({
+	// 	      width:'13%',
+	// 	  },1000,function(){
+	// 	  });
+
+	//  });
+ // },100);
+
+
+ var loop = function() {
+	 $('.click img').css('width','12%');
+	
+	 set = setTimeout(function() {
+	 	$('.click img').css('width','13%');
+	 	set = setTimeout(loop, 300);
+	 }, 300);
+ };
+
+loop();
 $('.click').hover(function(){
-	$(this).find('img').css('width','12%');
+	clearTimeout(set);
+	$('.click img').css('width','13%');
 },function(){
-	$(this).find('img').css('width','13%');
+	loop();
 })
 
 
