@@ -84,6 +84,28 @@
 		z-index:1000;
 		width: 250px;
 	}
+	.star3{
+		position: absolute;
+		left: -500px;
+		bottom: -100px; 
+		z-index:1000;
+		width: 250px;
+	}
+	.star4{
+		position: absolute;
+		left: -500px;
+		top: 300px; 
+		z-index:1000;
+		width: 250px;
+	}
+	.star5{
+		position: absolute;
+		left: 0px;
+		border: 0px; 
+		z-index:1000;
+		width: 250px;
+	}
+
 
 	.fly1{
 		position: absolute;
@@ -137,6 +159,10 @@
 
 
 		<img class="star2" src="1/star2.png">
+		<img class="star3" src="1/star2.png">
+
+		<img class="star4" src="1/star2.png">
+		<img class="star5" src="1/star2.png">
 
 		<img class="fly1" src="1/fly1.png">
 		<img class="fly2" src="1/fly2.png">
@@ -174,7 +200,7 @@ $(window).on("resize", function(){
 
 $('.title').animate({
   width:"45%",   //图片放大后的宽度
-},400,function(){
+},450,function(){
 	 $('.title').animate({
       width:"40%",   //图片放大后的宽度
   },200,function(){
@@ -222,6 +248,16 @@ setInterval(function(){
 	}
  },15);
 
+  setInterval(function(){
+	$('.star3').css('bottom',(parseInt($('.star3').css('bottom')) + 1) +'px' );
+	$('.star3').css('left',(parseInt($('.star3').css('left')) + 3) +'px' );
+
+	if(parseInt($('.star3').css('bottom')) > 600){
+		$('.star3').css('bottom', '-100px' );
+		$('.star3').css('left','-500px' );
+	}
+ },15);
+
  setInterval(function(){
 	$('.star2').css('bottom',(parseInt($('.star2').css('bottom')) + 1) +'px' );
 	$('.star2').css('left',(parseInt($('.star2').css('left')) + 3) +'px' );
@@ -229,6 +265,29 @@ setInterval(function(){
 	if(parseInt($('.star2').css('bottom')) > 400){
 		$('.star2').css('bottom', '0px' );
 		$('.star2').css('left','100px' );
+	}
+ },15);
+
+
+  setInterval(function(){
+	$('.star4').css('top',(parseInt($('.star4').css('top')) - 1) +'px' );
+	$('.star4').css('left',(parseInt($('.star4').css('left')) + 3) +'px' );
+
+	if(parseInt($('.star4').css('top')) < -300){
+		$('.star4').css('top','300px' );
+		$('.star4').css('left','-500px' );
+	}
+ },15);
+
+
+
+ setInterval(function(){
+	$('.star5').css('bottom',(parseInt($('.star5').css('bottom')) + 1) +'px' );
+	$('.star5').css('left',(parseInt($('.star5').css('left')) + 3) +'px' );
+
+	if(parseInt($('.star5').css('bottom')) > 600){
+		$('.star5').css('bottom', '0px' );
+		$('.star5').css('left','0px' );
 	}
  },15);
 
