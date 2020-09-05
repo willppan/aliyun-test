@@ -172,7 +172,7 @@
 </style>
 </head>
 <body>
-	<div class="main">
+	<div class="main" style="position: relative;">
 		<img class="logo" src="1/logo.png" width="0px">
 		
 		<img class="list"  src="1/list.png">	
@@ -208,11 +208,10 @@
 			<li><a href="rencai.html">人才战略</a></li>
 		</ul>
 
-		<div class="mid">
+		<!-- <div class="mid"> -->
 			
-			<div style="text-align: center;">
 			<!-- <div class="text" style="opacity: 0;margin-left: -100px;width: 100%"> -->
-				<img src="2/1.png" width="50%" style="margin-bottom: 20px">		
+				
 				<!-- <p> -->
 			<!-- 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i style="font-size: 18px;">广东省广新控股集团有限公司</i>是广东省政府全资企业，其前身是2000年组建的广东省外贸集团有限公司，2011年更名为广东省广新控股集团有限公司，2019年12月广新集团、丝纺集团重组合并，广新集团成为合并后的新主体。2019年集团营业收入672亿元，位列中国企业500强第317位、中国服务业企业500强第120位、中国跨国公司100大第93位、广州企业100强第13位，旗下共有11家企业上榜广东企业500强排行榜，获评主体信用“AAA”级。
 				</p>
@@ -222,8 +221,10 @@
 				<p>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未来，集团始终坚持服务广东省发展战略大局，秉持“引领新兴产业，共创美好未来”的企业使命，围绕“资本投资”主业，优化国有资本布局，通过开展投融资、产业培育和资本运作等，发挥投资引导和结构调整作用，推动产业集聚，培育核心竞争力和创新能力，努力建设成为有价值、负责任、受尊重的国际化资本投资公司。
 				</p> -->
-			</div>
-		</div>
+			<!-- </div> -->
+		<!-- </div> -->
+
+		<img src="2/1.png" width="50%" style="position: absolute;left: 23%;top: 15%;z-index: 2000">		
 	
 	</div>
 
@@ -236,6 +237,7 @@ width = $(window).width();
 $('.list').css("height", height); 
 $('.quan').css("width", width*0.8); 
 $('.banner').css("width", width); 
+$('.main').css("height", height); 
 // $('.mid').css("top", height*0.15); 
 
 $(window).on("resize", function(){
@@ -243,7 +245,8 @@ $(window).on("resize", function(){
 	width = $(window).width();
 	$('.list').css("height", height); 
 	$('.quan').css("width", width); 
-	$('.banner').css("width", width); 
+	$('.banner').css("width", width);
+	$('.main').css("height", height);  
 	// $('.mid').css("top", height*0.15); 
 
 });
