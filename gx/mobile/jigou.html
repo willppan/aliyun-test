@@ -48,14 +48,30 @@
 
 		<div style="position: fixed;width: 80%;top: 15%;left: 10%;z-index: 2000">
 			<img src="3/1.png" width="80%" >
-			<a href="https://campus.liepin.com/xycompany/175159/">
-				<img src="3/2.png" width="25%" style="position: absolute;right: -8%;top :45%">
+			<a class="click" href="https://campus.liepin.com/xycompany/175159/">
+				<img src="3/3.png" width="25%" style="position: absolute;right: -8%;top :45%">
 			</a>
 		</div>
 	</div>
 </body>
 <script type="text/javascript" src="jquery.min.js"></script>
 <script>
+ var loop = function() {
+	 $('.click img').css('width','25%');
+	
+	 set = setTimeout(function() {
+	 	$('.click img').css('width','26%');
+	 	set = setTimeout(loop, 300);
+	 }, 300);
+ };
+
+loop();
+$('.click').hover(function(){
+	clearTimeout(set);
+	$('.click img').css('width','26%');
+},function(){
+	loop();
+})
 
 </script>
 </html>
