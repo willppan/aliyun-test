@@ -41,7 +41,7 @@
 	    margin-bottom: 55px;
 	    padding-top: 45px;
 	    float: left;
-	    margin-left: 4%;
+	    margin-left: 3.2%;
 	}
 	.info {
 	   
@@ -67,6 +67,7 @@
 	    color: #333333;
 	    line-height: 28px;
 	    margin: 10px 10px 30px 45px;
+	    text-align: center;
 	}
 	.smalltitle{
 		margin-left: 45px;
@@ -77,6 +78,24 @@
 	.text{
 		text-align: center;
 	}
+	@media (min-width:200px) and (max-width:1000px) {
+		.midt{
+			width: 95%!important;
+		}
+		.logo{
+			width: 180px!important;
+		}
+		.con {
+			margin: 10px 10px 30px 15px!important;
+		}
+		.icon{
+			left: 140px!important;
+			top: -8px!important;
+		}
+		.midt p{
+			font-size: 12px!important;
+		}
+	}
 </style>
 </head>
 <body>
@@ -86,80 +105,92 @@
             <a href="liucheng.html">招聘流程&常见问题</a>
             <a href="zhiwei.html" class="activite">招聘岗位</a>
         </div>
-		<img src="1/3.png" width="15%" style="position: absolute;left: 3%;top: 5%">
+		<img class="logo" src="1/3.png" width="15%" style="position: absolute;left: 3%;top: 5%">
 		<img src="1/4.jpg" width="100%">
 	</div>
-	<div style="width: 1140px;margin: 30px auto;">
+	<div class="midt" style="box-shadow: 0 0 20px 0 rgba(0,0,0,.1);width: 1140px;margin: 30px auto;padding-bottom: 100px">
+	
 		<div class="item">
             <div class="info" style="position: relative;">
-                <p class="text">技术类</p>
-               	<img src="1/17.png" width="30px" style="position: absolute;left: 205px;top: 0px">
+                <p class="text">技术类岗位</p>
+               	<img class="icon" src="1/17.png" width="30px" style="position: absolute;left: 175px;top: 0px">
             </div>
             <div style="border: 1px solid #ccc;border-radius: 8px;">
-	            <div class="smalltitle">
+	           <!--  <div class="smalltitle">
 	                <h2>岗位</h2>
-	            </div>
-	            <p class="con" style="height: 83px;">	
+	            </div> -->
+	            <p class="con" style="height: 73px;padding-top: 10px">	
 					<span style="display: block;">后台开发(java开发/大数据开发/大数据平台开发/分布式数据库等方向)</span>
-	            	<span style="display: block;">WEB前端开发/系统测试/终端开发/业务运维/网络技术/</span>
+	            	<span style="display: block;">WEB前端开发、系统测试、终端开发、业务运维、网络技术</span>
 	            	<span style="display: block;">IT服务支持信息安全（c++开发/安全攻防/信息安全管理等方向）</span>
             	</p>
 
             </div>
-
         </div>
-	</div>
+	
 
-	<div style="width: 1140px;margin: 30px auto;">
-		<div class="item">
-            <div class="info" style="position: relative;">
-                <p class="text">业务类</p>
-               	<img src="1/15.png" width="28px" style="position: absolute;left: 205px;top: 0px">
-            </div>
-            <div style="border: 1px solid #ccc;border-radius: 8px;">
-	            <div class="smalltitle">
-	                <h2>岗位</h2>
+	
+			<div class="item">
+	            <div class="info" style="position: relative;">
+	                <p class="text">业务类岗位</p>
+	               	<img class="icon" src="1/15.png" width="28px" style="position: absolute;left: 175px;top: 0px">
 	            </div>
-	            <p class="con" style="height: 83px;">
-	            	<span style="display: block;">金融产品管理/互联网产品/用户体验设计/品牌营销风险策略分析/风险管理/</span>
-	            	<span style="display: block;">风险系统规划/营销系统规划产品运营/运营管理/客户经理/交易员等</span>
-	            </p>
-            </div>
-
-        </div>
-	</div>
-
-	<div style="width: 1140px;margin: 30px auto;">
-		<div class="item">
-            <div class="info" style="position: relative;">
-                <p class="text">数据类</p>
-               	<img src="1/14.png" width="28px" style="position: absolute;left: 203px;top: 0px">
-            </div>
-            <div style="border: 1px solid #ccc;border-radius: 8px;">
-	            <div class="smalltitle">
-	                <h2>岗位</h2>
+	            <div style="border: 1px solid #ccc;border-radius: 8px;">
+		           <!--  <div class="smalltitle">
+		                <h2>岗位</h2>
+		            </div> -->
+		            <p class="con" style="height: 73px;padding-top: 10px">
+		            	<span style="display: block;">金融产品管理、互联网产品、用户体验设计、客户经理</span>
+		            	<span style="display: block;">品牌营销风险策略分析、风险管理、风险系统规划</span>
+		            	<span style="display: block;">营销系统规划产品运营、运营管理、交易员等</span>
+		            </p>
 	            </div>
-	            <p class="con" style="height: 83px;">数据应用(数据开发)/风险模型算法数据分析/数据仓库等</p>
-            </div>
 
-        </div>
-	</div>
+	        </div>
+	
 
-	<div style="width: 1140px;margin: 30px auto;">
-		<div class="item">
-            <div class="info" style="position: relative;">
-                <p class="text">职能类</p>
-               	<img src="1/16.png" width="25px" style="position: absolute;left: 205px;top: 0px">
-            </div>
-            <div style="border: 1px solid #ccc;border-radius: 8px;">
-	            <div class="smalltitle">
-	                <h2>岗位</h2>
+	
+			<div class="item">
+	            <div class="info" style="position: relative;">
+	                <p class="text">数据类岗位</p>
+	               	<img class="icon" src="1/14.png" width="28px" style="position: absolute;left: 173px;top: 3px">
 	            </div>
-	            <p class="con" style="height: 83px;">商业分析/法务管理/合规管理/财务政策等</p>
-            </div>
+	            <div style="border: 1px solid #ccc;border-radius: 8px;">
+		            <!-- <div class="smalltitle">
+		                <h2>岗位</h2>
+		            </div> -->
+		            <p class="con" style="height: 50px;padding-top: 33px">数据应用(数据开发)、风险模型算法数据分析、数据仓库等</p>
+	            </div>
 
-        </div>
+	        </div>
+	
+			<div class="item">
+	            <div class="info" style="position: relative;">
+	                <p class="text">职能类岗位</p>
+	               	<img class="icon" src="1/16.png" width="25px" style="position: absolute;left: 175px;top: 3px">
+	            </div>
+	            <div style="border: 1px solid #ccc;border-radius: 8px;">
+		            <!-- <div class="smalltitle">
+		                <h2>岗位</h2>
+		            </div> -->
+		            <p class="con" style="height: 50px;padding-top: 33px">商业分析、法务管理、合规管理、财务政策等</p>
+	            </div>
+
+	        </div>
+	
+		<div style="clear: both;"></div>
+
+		<div   style="width: 100%;text-align: center;margin: 0 auto">
+			<a href="https://campus.liepin.com/ecomp/8312365/" style="text-decoration: none;" target="_blank">
+				<span style="padding:4px 15px;border-radius: 4px;background-color: #0e6dce;color: white;cursor: pointer;font-size: 23px">立即投递</span>
+			</a>
+		</div>
 	</div>
+	
+
+	
+	
+	
 </body>
 <!-- <script type="text/javascript" src="jquery.min.js"></script> -->
 </html>
